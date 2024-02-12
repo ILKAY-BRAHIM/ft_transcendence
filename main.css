@@ -1,0 +1,133 @@
+body
+{
+    /* font-family: 'Roboto', sans-serif; */
+    /* background: rgb(0,0,0); */
+    /* background-image: linear-gradient(to right bottom, #293a07, #233d0f, #1c3f16, #14411e, #084325); */
+    /* height: 100vh; */
+    /* display: flex; */
+    font-family: 'Roboto', sans-serif;
+    background: rgb(0,0,0);
+    background-image: url('./8978666.jpg'); /* Add this line */
+    background-size: cover;
+    background-position: center top;
+    background-position-y: -10rem;
+    /* background-position-x: -rem; */
+    /* height: 60vh; */
+    background-size: 95%;
+    /* background-repeat: no-repeat; */
+    /* height: 100vh; */
+}
+
+.nav
+{
+    display: flex;
+    /* justify-content: flex-end; */
+    gap: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    align-items: center;
+    /* text-align: center\ */
+    /* size: 2rem; */
+    /* justify-content: space-around;  */
+
+}
+
+/* .nav__link{
+    margin: 0 15px 0 15px;
+} */
+
+.Dashboard
+{
+    /* height: 60vh; */
+    /* width: 30%; */
+    /* display: flex; */
+    justify-content: space-around;
+    /* font-size: 1rem; */
+    /* display: grid; */
+    grid-template-columns: 2fr 2fr 2fr;
+    /* gap: 1rem; */
+    text-align: center;
+    align-items: center;
+    /* size: 10rem; */
+    margin: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+
+.Dashboard a i {
+    transition: transform 0.5s;
+    cursor: pointer;
+    transform: scale(1.25);
+    width: 5rem;
+
+}
+
+.Dashboard a:hover i {
+    /* transform: scale(1.8); */
+}
+
+
+.Dashboard a
+{
+    background-color: #3fc6ca;
+    
+    /* color: #ffffff; */
+    /* color: #211951; */
+    /* cursor: pointer; */
+    /* display: grid; */
+    grid-template-columns: 1fr 4fr;
+    text-decoration: none;
+    width: 30%;
+    height: 3rem;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    color: #10023f;
+    border: #77f2f2 solid 0.1rem;
+    align-items: center;
+    size: 0.2rem;
+    /* text-size-adjust: 0.1rem; */
+    /* transform: translateX(-15px); */
+    /* transition: transform 0.3s ease; Adjust as needed */
+    /* transform: translateX(1rem); */
+
+}
+.link-clicked {
+    /* transform: translateX(20rem); Adjust as needed */
+    /* transition: transform 1.3s ease; Adjust as needed */
+}
+
+#app
+{
+    color: white;
+    margin: 1rem;
+    padding: 1rem;
+    size: 1rem;
+    text-wrap: wrap;
+}
+
+.reg {
+    /* height: 20vh; */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    /* padding: auto; */
+    /* size: 1rem; */
+    margin: auto;
+    color: #10023f;
+
+
+}
+
+.hi 
+{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+

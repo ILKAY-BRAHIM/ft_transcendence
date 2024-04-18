@@ -25,6 +25,7 @@ function router() {
 };
 const loginForm = document.getElementById('app');
 
+
 loginForm.addEventListener('submit', function(event) {
     event.preventDefault();
     const username = document.getElementById('username');
@@ -44,7 +45,7 @@ loginForm.addEventListener('submit', function(event) {
     // Validate user's credentials here...
 
     // If validation is successful, change the route
-    if (username.value === "admin" && password.value === "admin")
+    if (username.value === "root" && password.value === "123456")
     {
         history.pushState("", "", "/submit");
         router();
@@ -72,7 +73,7 @@ allLinks.forEach(link => {
     link.addEventListener('click', function(event) {
         event.preventDefault();
         allLinks.forEach(otherLink => {
-            if (otherLink !== this) {
+            if (otherLink !== this) { 
                 otherLink.style.color = ''; // Reset color
                 otherLink.style.backgroundColor = ''; // Reset background color
                 otherLink.style.border = ''; // Reset border

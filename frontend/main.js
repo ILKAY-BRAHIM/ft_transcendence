@@ -28,8 +28,8 @@ const loginForm = document.getElementById('app');
 
 loginForm.addEventListener('submit', function(event) {
     event.preventDefault();
-    const username = document.getElementById('username');
-    const password = document.getElementById('password');
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
     // Validate the fields
     if (username.value === '') {
@@ -45,16 +45,43 @@ loginForm.addEventListener('submit', function(event) {
     // Validate user's credentials here...
 
     // If validation is successful, change the route
-    if (username.value === "root" && password.value === "123456")
-    {
-        history.pushState("", "", "/submit");
-        router();
-    }
-    else
-    {
-        alert('pass and usser incorcto');
-        return;
-    }
+    // if (username.value === "root" && password.value === "123456")
+    // {
+    //     history.pushState("", "", "/submit");
+    //     router();
+    // }
+    // else
+    // {
+    //     alert('pass and usser incorcto');
+    //     return;
+    // }
+    // fetch("http://django:8000/api/token/");
+    fetch("http://178.18.0.20:8000/api/token/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ "username":username, "password":password })
+    })
+    .then(response => {
+        if (response.ok) {
+            // Redirect or do something on successful login
+            // window.location.href = "/dashboard";
+            history.pushState("", "", "/submit");
+            router();
+        } else
+        {
+            // console.log("That's the reponse => ")
+            console.log("=> ", response)
+
+            alert('pass and usser incorcto');
+            return;
+        }
+    })
+    .catch(error => {
+        console.log("That's the error => ")
+        console.log(error)
+    });
 });
 
 // Handle navigation

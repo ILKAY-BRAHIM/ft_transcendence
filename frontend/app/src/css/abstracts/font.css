@@ -1,0 +1,38 @@
+@import url(./colors.css);
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+
+
+:root {
+    --typo-family : "Sora", sans-serif;
+}
+
+/* font Color */
+:root{
+    --font-primary-color: var(--color-primary);
+    --font-secondary-color : var(--color-secondary);
+    --font-accent-color: var(--color-gold);
+    --font-complementary-color : var(--color-black);
+    --font-bleu-color : var(--color-bleu);
+    --font-red-color : var(--color-red);
+    --font-green-color : var(--color-green);
+}
+
+/* font Weight */
+:root {
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-semi-bold: 600;
+    --font-weight-extra-bold: 800;
+}
+
+/* font size */
+:root {
+  --font-size-xxs:  10px ;
+  --font-size-xs: 12px ;
+  --font-size-sm:  14px ;
+  --font-size-md: 16px ; /* (Base) */
+  --font-size-lg:  20px ;
+  --font-size-xl: 30px ;
+  --font-size-xxl: 70px ;
+  --font-size-xxxl: 100px ;
+}

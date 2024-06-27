@@ -23,7 +23,7 @@ services:
       my_net:
         ipv4_address: 178.18.0.21
   frontend:
-    build: ./frontend/conf/
+    build: ./frontend/
     ports:
       - "8080:8080"
     volumes:

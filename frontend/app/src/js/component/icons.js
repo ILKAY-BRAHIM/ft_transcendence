@@ -45,6 +45,11 @@ export const icons = {
         src : `${pathBase}settings.svg`,
         type : 'image/svg+xml',
         title : 'Settings'
+    },
+    Search: {
+        src : `${pathBase}search.svg`,
+        type : 'image/svg+xml',
+        title : 'Search'
     }
 };
 

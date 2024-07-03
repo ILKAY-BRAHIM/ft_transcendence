@@ -8,7 +8,7 @@ export const creatProfileImage = () => {
     image.setAttribute('alt', 'profile image');
     profile.appendChild(image);
     return profile;
-}
+};
 
 export const creatProfileInstance = () => {
     const profile = document.createElement('div');

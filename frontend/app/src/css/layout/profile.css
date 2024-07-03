@@ -1,0 +1,43 @@
+.profile-card{
+    width: 100%;
+    max-width: 300px;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 70px auto;
+    color: var(--font-primary-color);
+    font-weight: var(--font-weight-semi-bold);
+    font-size: var(--font-size-sm);
+}
+
+.profile-image{
+    border-radius: 100%;
+    background-color: var(--color-accent);
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-card img{
+    background-color: aquamarine;
+    width: 90%;
+    height: 90%;
+    border-radius: 100%;
+    border: 2px solid black;
+
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    padding:  0.5em 0;
+}
+
+.light{
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-xs);
+    color: var(--font-secondary-color);
+}

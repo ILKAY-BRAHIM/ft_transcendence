@@ -1,0 +1,8 @@
+:root{
+    --profile-img-size-xs: 28px;
+    --profile-img-size-sm: 48px;
+    --profile-img-size-md: 53px;
+    --profile-img-size-lg: 85px;
+    --profile-img-size-xl: 110px;
+    --profile-img-size-xxl: 155px;
+}

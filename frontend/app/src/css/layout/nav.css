@@ -14,11 +14,12 @@
 .horizontal-nav .logo {
     width: 124px;
     height: 75px;
-    margin: 1em;
+    margin: 0em 1em 1em 1em;
 }
 
 .horizontal-nav ul{
     margin: 2em;
+    margin-top: 0.5em;
     display: flex;
     flex-direction: column;
     gap : 2em;

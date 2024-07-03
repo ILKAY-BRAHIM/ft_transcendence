@@ -48,11 +48,11 @@ export const icons = {
     }
 };
 
-export function createIcon(icon){
+export function createIcon(icon, className){
     const element = document.createElement('object');
     element.setAttribute('data', `${icon.src}`);
     element.setAttribute('type', `${icon.type}`);
     element.setAttribute('title', `${icon.title}`);
-    element.setAttribute('class', 'hor-nav-icons');
+    element.setAttribute('class', `${className}`);
     return element;
 };

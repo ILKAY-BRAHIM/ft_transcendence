@@ -1,6 +1,7 @@
 import  Nav from './component/Nav.js';
 import { navigatTo } from './services/route.js';
 import { attachSVGLoadEventListeners } from './component/Nav.js';
+import { creatHeader } from './component/header.js';
 
 
 function renderComponent(component) {
@@ -12,6 +13,8 @@ function renderComponent(component) {
 
 document.addEventListener('DOMContentLoaded', function() {
     renderComponent(Nav());
+    const header = document.getElementById('page-body');
+    header.appendChild(creatHeader());
 });
 
 

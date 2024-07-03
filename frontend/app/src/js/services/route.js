@@ -47,7 +47,6 @@ const urlRoutes = {
         title: "champion",
         description: "Play a game."
     }
-
 };
 
 export const navigatTo = (event) => {

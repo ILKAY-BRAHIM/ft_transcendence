@@ -14,10 +14,10 @@ const navItems = [
 
 function createNavItem(item) {
     const navItem = document.createElement('li');
-    const iconElement = createIcon(icons[item.name]);
+    const iconElement = createIcon(icons[item.name], 'hor-nav-icons');
     const navLink = document.createElement('a');
     navLink.setAttribute('href', `${item.link}`);
-    navLink.innerHTML = `${item.name}`
+    navLink.innerHTML = `${item.name}`;
     navItem.appendChild(iconElement);
     navItem.appendChild(navLink);
     return navItem;

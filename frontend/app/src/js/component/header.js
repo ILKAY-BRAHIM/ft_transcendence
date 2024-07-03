@@ -6,8 +6,8 @@ import { createIcon } from './icons.js';
 export const creatHeader = () => {
     const nav = document.createElement('div');
     nav.setAttribute('class', 'header');
-    // nav.appendChild(searchBar());
-    // nav.appendChild(creatProfileInstance());
+    nav.appendChild(searchBar());
+    nav.appendChild(creatProfileInstance());
     nav.appendChild(headerNotification());
     return nav;
 };

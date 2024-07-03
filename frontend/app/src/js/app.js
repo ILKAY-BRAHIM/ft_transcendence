@@ -5,7 +5,7 @@ import { attachSVGLoadEventListeners } from './component/Nav.js';
 
 function renderComponent(component) {
     const root = document.getElementById('nav-container');
-    root.innerHTML = ''; // Clear existing content
+    root.innerHTML = '';
     root.appendChild(component);
     attachSVGLoadEventListeners();
 }

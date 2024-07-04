@@ -12,9 +12,9 @@ function renderComponent(component) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    renderComponent(Nav());
-    const header = document.getElementById('page-body');
+    const header = document.getElementById('header');
     header.appendChild(creatHeader());
+    renderComponent(Nav());
 });
 
 

@@ -8,9 +8,8 @@
 body{
     width: 100vw;
     min-height: 100vh;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
+    display: grid;
+    grid-template-columns: minmax(250px, 350px) auto;
     font-family: var(--typo-family);
     background: var(--color-surface-primery);
     background-attachment: fixed;

@@ -1,0 +1,16 @@
+.notification{
+    width: 100%;
+    justify-self: end;
+    max-width: 200px; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--font-primary-color);
+}
+
+.notification .coin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

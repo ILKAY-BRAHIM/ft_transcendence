@@ -1,8 +1,10 @@
 .header{
     width: 100%;
+    /* min-height: 100px; */
+    height: 100%;
     display: grid;
     grid-template-columns: minmax(600px, 60%) 20% 15%;
+    justify-content: center; 
     align-items: center;
-    justify-content: center;
-    margin: 1em;
+    margin: auto;
 }

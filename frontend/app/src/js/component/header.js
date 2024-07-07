@@ -1,14 +1,20 @@
 import { icons} from './icons.js';
-import {creatProfileInstance} from './profile.js'
 import { searchBar } from './searchBar.js';
 import { createIcon } from './icons.js';
+
+import { creatProfileInfo, creatProfileInstance, creatProfileImage} from './profile.js';
+import { creatButton } from './button.js';
 
 export const creatHeader = () => {
     const nav = document.createElement('div');
     nav.setAttribute('class', 'header');
     nav.appendChild(searchBar());
     nav.appendChild(headerNotification());
-    nav.appendChild(creatProfileInstance());
+
+    const img = creatProfileImage("gold-profile-img", "img-sm");
+    const info = creatProfileInfo();
+    const button = creatButton('false');
+    nav.appendChild(creatProfileInstance(img, info, button, 'col', 'profile-card-sm'));
     return nav;
 };
 

@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    /* overflow-x: hidden; */
 }
 
 
@@ -13,4 +14,11 @@ body{
     font-family: var(--typo-family);
     background: var(--color-surface-primery);
     background-attachment: fixed;
+}
+
+.page-content{
+    display: grid;
+    grid-template-rows: minmax(80px, 10%) 90%;
+    /* align-items: center; */
+    /* justify-content: center; */
 }

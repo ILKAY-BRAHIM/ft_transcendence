@@ -1,22 +1,45 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/frontend/app/src/css/main.css">
-    <style>
-        button{
-            /* background-color: black; */
-            border: none;
-        }
-    </style>
+    <title>Change SVG Color</title>
 </head>
 <body>
-    <img src="/frontend/app/src/assets/images/" alt="">
-    <button>
-        <object data="/frontend/app/src/assets/icons/game.svg" type="image/svg+xml"></object>
-    </button>
-    <div id="app"></div>
+    <object id="svgObject" type="image/svg+xml" data=""></object>
     
+    <script>
+        // Path to your SVG file
+        const svgPath = '/';
+
+        // Function to fetch the SVG content and change its color
+        function loadAndChangeSVGColor(svgPath, color) {
+            fetch(svgPath)
+                .then(response => response.text())
+                .then(svgContent => {
+                    // Parse the SVG content
+                    const parser = new DOMParser();
+                    const svgDoc = parser.parseFromString(svgContent, 'image/svg+xml');
+                    const svgElement = svgDoc.documentElement;
+
+                    // Change the color of the SVG
+                    svgElement.setAttribute('fill', color);
+
+                    // Serialize the modified SVG
+                    const serializer = new XMLSerializer();
+                    const modifiedSVGContent = serializer.serializeToString(svgElement);
+
+                    // Set the modified SVG as the source of the object
+                    const svgObject = document.getElementById('svgObject');
+                    const blob = new Blob([modifiedSVGContent], { type: 'image/svg+xml' });
+                    const url = URL.createObjectURL(blob);
+                    svgObject.data = url;
+                })
+                .catch(error => console.error('Error fetching SVG:', error));
+        }
+
+        // Call the function with the desired color
+        loadAndChangeSVGColor(svgPath, 'red');
+    </script>
 </body>
 </html>

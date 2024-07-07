@@ -8,3 +8,6 @@
 @import url(./layout/profile.css);
 @import url(./layout/search-bar.css);
 @import url(./layout/notification.css);
+@import url(./layout/button.css);
+
+@import url(./pages/profile.css);

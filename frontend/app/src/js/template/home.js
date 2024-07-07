@@ -1,4 +1,4 @@
-export default function Home() {
+export default function HomePage() {
     const element = document.createElement('div');
     element.innerHTML = '<h1>Home</h1><p>Welcome to our web application!</p>';
     return element;

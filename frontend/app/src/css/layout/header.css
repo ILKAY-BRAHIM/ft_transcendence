@@ -3,8 +3,33 @@
     /* min-height: 100px; */
     height: 100%;
     display: grid;
-    grid-template-columns: minmax(600px, 60%) 20% 15%;
+    grid-template-columns: minmax(600px, 6fr)  4fr;
     justify-content: center; 
     align-items: center;
     margin: auto;
+}
+
+.nav-icon-profile{
+    display: flex;
+    flex-direction: row;
+    gap: 4em;
+    margin-left: auto;
+    margin-right: 4em;
+}
+
+.notification{
+    width: 100%;
+    justify-self: end;
+    max-width: 200px; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--font-primary-color);
+}
+
+.notification .coin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

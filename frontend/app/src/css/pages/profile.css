@@ -1,10 +1,13 @@
 /* profile page */
 .profile-body{
-    display: grid;
-    grid-template-columns: 30% 70%;
-    grid-template-rows: 100%;
     width: 100%;
     height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 100%;
+    gap: 3em;
+    text-transform: capitalize;
+
     /* gap: 1em; */
 }
 
@@ -13,25 +16,25 @@
     width: 100%;
     display: grid;
     grid-row: 1/2;
-    grid-template-rows: 25%  35% 40%;
-    /* background-color: rgba(33, 72, 72, 0.694); */
+    grid-template-rows: 1fr 4fr;
     padding: 1rem;
     align-items: start;
-    /* justify-content: end; */
-    /* gap: 1em; */
-    max-width: 700px;
+    max-width: 500px;
+    margin-left: auto;
+    gap:1em;
 }
 
 .profile-body .right{
     height: 100%;
     width: 100%;
-    
-    grid-row: 2/3;
-    grid-template-rows: 25% 45% 30%;
-    background-color: rgba(28, 60, 30, 0.694);
+    gap:1em;
+    /* grid-row: 2/3; */
+    grid-template-rows: 2fr 5fr 3fr;
+    /* background-color: rgba(18, 120, 25, 0.054); */
     /* gap: 1em; */
     /* align-items: center; */
     display: grid;
+    /* margin-right: auto; */
 }
 
 .info-boxs{
@@ -67,4 +70,80 @@
     font-weight: var(--font-weight-semi-bold);
     color: var(--font-primary-color);
     margin-bottom: 1em;
+}
+
+.profile-body .left .middel .box{
+    margin-bottom: 2em;
+}
+
+/* Champion cards */
+
+.champion-card{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    padding: 1em;
+    background-color: var(--color-secondary-10);
+    border-radius: 1em;
+    color: var(--font-primary-color);
+    font-size: var(--font-size-xs);
+    /* align-items: center; */
+}
+
+.champion-card .image-box{
+    width: 40px;
+    height: 60px;
+}
+
+.champion-card .image-box img{
+    width: 100%;
+    height: 100%;
+}
+
+.champion-card .champions-info{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    gap: 0.5em;
+}
+
+.champion-title {
+    font-weight: var(--font-weight-semi-bold);
+}
+.champions-info .date{
+    font-weight: var(--font-weight-regular);
+    color: var(--font-secondary-color);
+}
+
+.champion-card > *:last-child{
+    margin-left: auto;
+    
+}
+
+.champion-card{
+    margin-bottom: 1em;
+}
+
+/* Achievement */
+.achievement {
+    height: 100%;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+    /* justify-content: space-around; */
+    /* align-items: center;
+    justify-content: center; */
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr; */
+}
+
+.achiev-box{
+    /* width: 100%;
+    height: 100%; */
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    background-color: var(--color-complementary);
+    border-radius: 1em;
 }

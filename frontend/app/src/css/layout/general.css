@@ -10,7 +10,7 @@ body{
     width: 100vw;
     min-height: 100vh;
     display: grid;
-    grid-template-columns: minmax(250px, 350px) auto;
+    grid-template-columns: 2fr 8fr;
     font-family: var(--typo-family);
     background: var(--color-surface-primery);
     background-attachment: fixed;

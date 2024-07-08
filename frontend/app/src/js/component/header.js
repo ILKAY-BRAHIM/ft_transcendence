@@ -9,12 +9,18 @@ export const creatHeader = () => {
     const nav = document.createElement('div');
     nav.setAttribute('class', 'header');
     nav.appendChild(searchBar());
-    nav.appendChild(headerNotification());
 
+    const rightSide = document.createElement('div');
+    rightSide.setAttribute('class', 'nav-icon-profile');
+    rightSide.appendChild(headerNotification());
     const img = creatProfileImage("gold-profile-img", "img-sm");
     const info = creatProfileInfo();
     const button = creatButton('false');
-    nav.appendChild(creatProfileInstance(img, info, button, 'col', 'profile-card-sm'));
+    rightSide.appendChild(creatProfileInstance(img, info, button, 'col', 'profile-card-sm'));
+
+    // nav.appendChild(headerNotification());
+    // nav.appendChild(creatProfileInstance(img, info, button, 'col', 'profile-card-sm'));
+    nav.appendChild(rightSide);
     return nav;
 };
 

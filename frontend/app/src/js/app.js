@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     //For test component 
-    const body = document.getElementById('page-body');
-    body.setAttribute('class', 'profile-body')
+    const body = document.getElementById('bodyInstance');
+    // body.setAttribute('class', 'profile-body');
     body.appendChild(ProfileTest());
 
 });

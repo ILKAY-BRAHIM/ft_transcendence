@@ -11,6 +11,7 @@
 
 .btn-sm, .btn-md{
     font-size: var(--font-size-xxs);
+    height: max-content;
 }
 
 .btn-lg, .btn-xl{

@@ -18,8 +18,6 @@ export const creatHeader = () => {
     const button = creatButton('false');
     rightSide.appendChild(creatProfileInstance(img, info, button, 'col', 'profile-card-sm'));
 
-    // nav.appendChild(headerNotification());
-    // nav.appendChild(creatProfileInstance(img, info, button, 'col', 'profile-card-sm'));
     nav.appendChild(rightSide);
     return nav;
 };

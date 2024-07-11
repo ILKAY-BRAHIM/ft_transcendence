@@ -2,24 +2,11 @@ import { creatProfileInfo, creatProfileInstance, creatProfileImage} from '../com
 import { creatButton } from '../component/button.js';
 
 import { createIcon, icons } from '../component/icons.js';
+import { creatTitle } from '../component/generale.js';
 
 const base = '/frontend/app/src/assets/images/';
 
 // export default function Profile() {
-//     const element = document.createElement('div');
-//     element.setAttribute('class', 'profile-body');
-
-//     const leftBox = document.createElement('div');
-//     leftBox.setAttribute('class', 'left');
-
-//     const img = creatProfileImage();
-//     const info = creatProfileInfo();
-//     const button = creatButton('true');
-//     leftBox.appendChild(creatProfileInstance(img, info, button, 'col', 'profile-card-md'));
-
-//     const rightBox = document.createElement('div');
-//     rightBox.setAttribute('class', 'right');
-//     return element;
 // }
 
 
@@ -156,7 +143,7 @@ const creatAchievement = () => {
 
 const achievement = () => {
     const element = document.createElement('div');
-    element.setAttribute('class', 'achievement');
+    element.setAttribute('class', 'box achievement');
 
     element.appendChild(creatAchievement());
     element.appendChild(creatAchievement());
@@ -167,7 +154,90 @@ const achievement = () => {
 
 // Global rank
 
+const rankInstence = () => {
+    const instance = document.createElement('li');
+    instance.setAttribute('class', 'instance');
+    
+    const rankPosition = document.createElement('p');
+    rankPosition.setAttribute('class', 'rank-position');
+    rankPosition.innerHTML = '1';
 
+    const img = creatProfileImage("", "img-xs");
+    const info = creatProfileInfo();
+    const button = creatButton('false');
+
+    const rankPoint = document.createElement('p');
+    rankPoint.setAttribute('class', 'rank-point');
+    rankPoint.innerHTML = "10500";
+    rankPoint.innerHTML += " point";
+    
+    instance.appendChild(rankPosition);
+    instance.appendChild(creatProfileInstance(img, info, '', '', 'profile-card-xs'));
+    instance.appendChild(rankPoint);
+    return instance;
+}
+
+const profileSectionRank = () => {
+    const element = document.createElement('div');
+    element.setAttribute('class', 'box rank');
+
+    const title = document.createElement('p');
+    title.setAttribute('class', 'title');
+    title.innerHTML = 'global rank';
+
+    const listOfRank = document.createElement('ul');
+    listOfRank.setAttribute('class', 'list-of-rank');
+   
+
+    listOfRank.appendChild(rankInstence());
+    listOfRank.appendChild(rankInstence());
+    listOfRank.appendChild(rankInstence());
+    listOfRank.appendChild(rankInstence());
+    listOfRank.appendChild(rankInstence());
+    listOfRank.appendChild(rankInstence());
+
+    element.appendChild(title);
+    element.appendChild(listOfRank);
+
+    return element;
+}
+
+const friendInstence = () =>{
+
+    const instance = document.createElement('li');
+
+    const img = creatProfileImage("", "img-xl");
+    const info = creatProfileInfo();
+    const button = creatButton('true', 'btn-sm', 'btn-gold', 'say hello');
+
+    instance.appendChild(creatProfileInstance(img, info, button, 'same-row', 'profile-card-xs'));
+
+    return instance;
+}
+
+const profileSectionFriend = () => {
+    const element = document.createElement('div');
+    element.setAttribute('class', 'box friend');
+
+    const title = creatTitle('friend');
+
+    const listOfFriend = document.createElement('ul');
+    listOfFriend.setAttribute('class', 'list-of-friend');
+
+    
+    listOfFriend.appendChild(friendInstence());
+    listOfFriend.appendChild(friendInstence());
+    listOfFriend.appendChild(friendInstence());
+    listOfFriend.appendChild(friendInstence());
+    listOfFriend.appendChild(friendInstence());
+    listOfFriend.appendChild(friendInstence());
+    listOfFriend.appendChild(friendInstence());
+    
+    element.appendChild(title);
+    element.appendChild(listOfFriend);
+
+    return element;
+}
 
 export default function ProfileTest() {
     const element = document.getElementById('page-body');
@@ -179,21 +249,31 @@ export default function ProfileTest() {
     const img = creatProfileImage('', 'img-md');
     const info = creatProfileInfo();
     const button = creatButton('true', 'btn-sm', 'btn-gold', 'Edit profile');
-    leftBox.appendChild(creatProfileInstance(img, info, button, 'col', 'profile-card-md'));
+    leftBox.appendChild(creatProfileInstance(img, info, button, 'right-bottom', 'profile-card-md'));
 
-    const middel = document.createElement('div');
-    middel.setAttribute('class', 'middel');
-    middel.appendChild(badgesCollected());
-    middel.appendChild(personalInformations());
-    middel.appendChild(championsAchievement());
+    const leftMiddel = document.createElement('div');
+    leftMiddel.setAttribute('class', 'middel');
+    leftMiddel.appendChild(badgesCollected());
+    leftMiddel.appendChild(personalInformations());
+    leftMiddel.appendChild(championsAchievement());
 
-    leftBox.appendChild(middel);
+    leftBox.appendChild(leftMiddel);
 
 
     const rightBox = document.createElement('div');
     rightBox.setAttribute('class', 'right');
 
+    const rightMiddel = document.createElement('div');
+    rightMiddel.setAttribute('class', 'middel');
+
+    
     rightBox.appendChild(achievement());
+    rightMiddel.appendChild(profileSectionRank());
+    rightMiddel.appendChild(profileSectionFriend());
+
+    // const
+
+    rightBox.appendChild(rightMiddel);
 
     element.appendChild(leftBox);
     element.appendChild(rightBox);

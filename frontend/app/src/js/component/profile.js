@@ -1,8 +1,4 @@
-
-import {creatButton} from './button.js';
-
 const base = '/frontend/app/src/assets/images/';
-
 
 export const creatProfileImage = (type, size) => {
     const profile = document.createElement('div');
@@ -33,14 +29,12 @@ export const creatProfileInfo = () => {
 };
 
 
-// creatProfileInstance (profileImage, "infoColumn", button, getRank());
-
-export const creatProfileInstance = (image, info, button ,infoDispaly, size) => {
+export const creatProfileInstance = (image, info, button ,positionOfButton, size) => {
     const profile = document.createElement('div');
     profile.setAttribute('class', `profile-card  ${size}`);
 
     const infoCard = document.createElement('div');
-    infoCard.setAttribute('class' , infoDispaly);
+    infoCard.setAttribute('class' , positionOfButton);
 
     if (image instanceof Node) {
         profile.appendChild(image);

@@ -13,17 +13,35 @@ services:
     networks:
       my_net:
         ipv4_address: 178.18.0.20
+  auth:
+    build: ./backend/auth/conf/
+    container_name: Auth
+    command: python manage.py runserver 0.0.0.0:8001
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./backend/auth:/code
+    depends_on:
+      - database
+    networks:
+      my_net:
+        ipv4_address: 178.18.0.23
   database:
     image: postgres:latest
+    container_name: Postgres
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./backend/database/conf/init_db.sh:/docker-entrypoint-initdb.d/init-db.sh
     networks:
       my_net:
         ipv4_address: 178.18.0.21
   frontend:
     build: ./frontend/
+    container_name: Frontend
     ports:
       - "8080:8080"
     volumes:
@@ -40,3 +58,5 @@ networks:
       driver: default
       config:
         - subnet: 178.18.0.0/16
+volumes:
+  db_data:

@@ -239,7 +239,7 @@ const profileSectionFriend = () => {
     return element;
 }
 
-export default function ProfileTest() {
+export default function Profile() {
     const element = document.getElementById('page-body');
     element.setAttribute('class', 'profile-body');
 
@@ -270,8 +270,6 @@ export default function ProfileTest() {
     rightBox.appendChild(achievement());
     rightMiddel.appendChild(profileSectionRank());
     rightMiddel.appendChild(profileSectionFriend());
-
-    // const
 
     rightBox.appendChild(rightMiddel);
 

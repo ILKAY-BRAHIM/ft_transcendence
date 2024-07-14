@@ -43,11 +43,11 @@ services:
     build: ./frontend/
     container_name: Frontend
     ports:
-      - "8080:8080"
+      - "80:80"
     volumes:
-      - ./frontend:/code
-    depends_on:
-      - django
+      - ./frontend/app:/usr/share/nginx/html
+    # depends_on:
+    #   - django
     networks:
       my_net:
         ipv4_address: 178.18.0.22

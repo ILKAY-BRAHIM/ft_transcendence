@@ -1,4 +1,4 @@
-const base = '/frontend/app/src/assets/images/';
+const base = '/src/assets/images/';
 
 export const creatProfileImage = (type, size) => {
     const profile = document.createElement('div');

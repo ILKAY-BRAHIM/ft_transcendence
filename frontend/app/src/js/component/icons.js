@@ -1,4 +1,4 @@
-const pathBase = '/frontend/app/src/assets/icons/';
+const pathBase = '/src/assets/icons/';
 
 export const icons = {
     PingPong: {

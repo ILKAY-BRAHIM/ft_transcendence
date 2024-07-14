@@ -4,7 +4,7 @@ import { creatButton } from '../component/button.js';
 import { createIcon, icons } from '../component/icons.js';
 import { creatTitle } from '../component/generale.js';
 
-const base = '/frontend/app/src/assets/images/';
+const base = '/src/assets/images/';
 
 // export default function Profile() {
 // }
@@ -240,7 +240,8 @@ const profileSectionFriend = () => {
 }
 
 export default function Profile() {
-    const element = document.getElementById('page-body');
+    // const element = document.getElementById('test');
+    const element = document.createElement('div');
     element.setAttribute('class', 'profile-body');
 
     const leftBox = document.createElement('div');

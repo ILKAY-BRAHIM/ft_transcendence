@@ -8,22 +8,24 @@ export default function Nav(){
 }
 
 // Function to attach load event listeners to SVG objects
-export function attachSVGLoadEventListeners() {
-    const svgObjects = document.querySelectorAll('object.hor-nav-icons');
+export function attachSVGLoadEventListeners(className, color) {
+    const svgObjects = document.querySelectorAll(className);
     svgObjects.forEach(obj => {
         obj.addEventListener('load', () => {
-            changeSVGColor(obj);
+            changeSVGColor(obj , color);
         });
     });
 }
 
 // Function to change SVG colors
-export function changeSVGColor(obj) {
+export function changeSVGColor(obj, color) {
     const svgDoc = obj.contentDocument;
     if (svgDoc) {
         const svgElement = svgDoc.querySelector('svg');
         if (svgElement) {
-            const fillColor = getComputedStyle(document.documentElement).getPropertyValue('--color-secondary').trim();
+            let fillColor = getComputedStyle(document.documentElement).getPropertyValue('--color-secondary').trim();
+            if (color)
+                fillColor = color;
             svgElement.querySelectorAll('path').forEach(element => {
                 element.setAttribute('fill', fillColor);
             });

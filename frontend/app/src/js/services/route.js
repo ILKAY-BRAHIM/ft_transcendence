@@ -5,6 +5,11 @@ import Friends from '../template/friends.js';
 import Leaderboard from '../template/leaderboard.js';
 import Game from '../template/game.js';
 import Champion from '../template/champion.js';
+import Welcome from '../template/welcome.js';
+import Nav from '../component/Nav.js';
+import { renderComponent } from '../app.js';
+import { creatHeader } from '../component/header.js';
+
 
 const urlRoutes = {
     404: {
@@ -13,6 +18,11 @@ const urlRoutes = {
         description: "The requested page was not found."
     },
     "/": {
+        component: Welcome,
+        title: "Welcome",
+        description: "Please register welcome to visite our web site."
+    },
+    "/home": {
         component: Home,
         title: "Home",
         description: "Welcome to the home page."
@@ -47,6 +57,7 @@ const urlRoutes = {
         title: "champion",
         description: "Play a game."
     }
+    
 };
 
 export const navigatTo = (event) => {
@@ -57,7 +68,7 @@ export const navigatTo = (event) => {
     urlLocationHandler();
 };
 
-const urlLocationHandler = async () => {
+export const urlLocationHandler = async () => {
     let location = window.location.pathname;
     if (location.length === 0) {
         location = "/";
@@ -65,6 +76,13 @@ const urlLocationHandler = async () => {
 
     const route = urlRoutes[location] || urlRoutes[404];
     try {
+        const header = document.getElementById('header');
+        header.innerHTML = '';
+        if (location != "/") {
+            renderComponent(Nav());
+            header.append(creatHeader());   
+        }
+        console.log(location);
 
         const Component = route.component;
         const componentInstance = Component();

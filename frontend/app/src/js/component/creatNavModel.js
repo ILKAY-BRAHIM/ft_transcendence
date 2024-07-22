@@ -1,8 +1,9 @@
 import {icons} from './icons.js';
 import {createIcon} from './icons.js';
+import { getIcon } from './getIcon.js'
 
 const navItems = [
-    {name: 'Home', link: '/'},
+    {name: 'Home', link: '/home'},
     {name: 'Profile', link: '/profile'},
     {name: 'Message', link: '/message'},
     {name: 'Friends', link: '/friends'},
@@ -14,7 +15,7 @@ const navItems = [
 
 function createNavItem(item) {
     const navItem = document.createElement('li');
-    const iconElement = createIcon(icons[item.name], 'hor-nav-icons');
+    const iconElement = createIcon(icons[item.name], 'hor-nav-icons icon-sm');
     const navLink = document.createElement('a');
     navLink.setAttribute('href', `${item.link}`);
     navLink.innerHTML = `${item.name}`;

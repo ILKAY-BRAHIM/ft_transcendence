@@ -12,6 +12,7 @@
 
 /* layout */
 @import url(./layout/general.css);
+@import url(./layout/sub-page.css);
 
 /* Pages */
 @import url(./pages/profile.css);

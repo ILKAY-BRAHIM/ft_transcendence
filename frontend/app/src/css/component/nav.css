@@ -33,6 +33,7 @@
     display: flex;
     align-items: center;
     gap : 0.5em;
+    /* height: 40px; */
 }
 
 .horizontal-nav li a {

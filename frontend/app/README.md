@@ -40,13 +40,13 @@ project-root/
 │   │   │       
 │   │   └── main.css                    // Main entry point for all styles
 │   ├── assets/
-│   │   ├── icons/
+│   │   ├── icons/                      // put all the icons there as .svg by the exact name
 │   │   └── images/
 │   └──js/
 │       ├── component/
 │       │   ├── nav.js
-│       │   ├── subNav.js
-│       │   ├── cards.js
+│       │   ├── header.js
+│       │   ├── profile.js
 │       │   └── (...)
 │       ├── template/
 │       │   ├── message.js
@@ -67,7 +67,7 @@ project-root/
      ________________________________________________________
     |   _____________    _____________                       |
     |  |             |  |   Name      |                      |
-    |  |             |  |  Nick name  |                      |  
+    |  |             |  |  Nick name  |                      |
     |  |    image    |  |_____________|      _____________   |
     |  |             |                      |   Button    |  |
     |  |_____________|                      |_____________|  |

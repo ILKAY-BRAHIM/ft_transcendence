@@ -23,3 +23,13 @@ body{
     /* justify-content: center; */
 }
 
+.wasga{
+    color: rgb(255, 221, 1);
+    font-size: 100px;
+    font-weight: 900;
+}
+
+.wasga-img{
+    margin-left: 20%;
+    margin-bottom: 5em;
+}

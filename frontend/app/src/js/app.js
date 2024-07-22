@@ -2,27 +2,23 @@ import  Nav from './component/Nav.js';
 import { navigatTo } from './services/route.js';
 import { attachSVGLoadEventListeners } from './component/Nav.js';
 import { creatHeader } from './component/header.js';
+import Welcome from './template/welcome.js';
+import { urlLocationHandler } from './services/route.js';
 
-import Profile from './template/profile.js';
-import Home from './template/home.js';
-// import Home from './template/home.js';
-// import Profile from './template/profile.js';
+let A = 0;
 
-
-function renderComponent(component) {
+export function renderComponent(component) {
     const root = document.getElementById('nav-container');
     root.innerHTML = '';
     root.appendChild(component);
-    attachSVGLoadEventListeners();
+    attachSVGLoadEventListeners('object.hor-nav-icons');
 };
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const header = document.getElementById('header');
-    renderComponent(Nav());
-    header.append(creatHeader());
-    
+    urlLocationHandler();
 });
+
 
 document.addEventListener("click", (e) => {
     const { target } = e;

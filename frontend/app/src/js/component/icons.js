@@ -4,7 +4,7 @@ export const icons = {
     PingPong: {
         src: `${pathBase}logo.svg`,
         type : 'image/svg+xml',
-        title: 'PingPong'
+        title: 'PingPong',
     },
     Home: {
         src: `${pathBase}home.svg`,

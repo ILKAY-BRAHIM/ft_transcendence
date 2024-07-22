@@ -3,12 +3,9 @@ import { creatButton } from '../component/button.js';
 
 import { createIcon, icons } from '../component/icons.js';
 import { creatTitle } from '../component/generale.js';
+import { attachSVGLoadEventListeners } from '../component/Nav.js';
 
 const base = '/src/assets/images/';
-
-// export default function Profile() {
-// }
-
 
 // ---------------------------------------- Left side Instence --------------------------------------------
 const badgesCollected = () => {
@@ -21,8 +18,8 @@ const badgesCollected = () => {
 
     const badge = document.createElement('div');
     badge.setAttribute('class', 'badges');
-    badge.appendChild(createIcon(icons.Champion));
-    badge.appendChild(createIcon(icons.Leaderboard));
+    badge.appendChild(createIcon(icons.Champion, 'icon-sm'));
+    badge.appendChild(createIcon(icons.Leaderboard, 'icon-sm'));
 
     element.appendChild(title);
     element.appendChild(badge);
@@ -37,7 +34,7 @@ const personalInfo = (iconName , titel, data) => {
 
     const info = document.createElement('div');
     info.setAttribute('class', 'personal-info');
-    info.appendChild(createIcon(iconName));
+    info.appendChild(createIcon(iconName, 'icon-sm'));
     let subTitle = document.createElement('p');
     subTitle.setAttribute('class', 'sub-title');
     subTitle.innerHTML = titel;
@@ -274,7 +271,12 @@ export default function Profile() {
 
     rightBox.appendChild(rightMiddel);
 
+
+
     element.appendChild(leftBox);
     element.appendChild(rightBox);
+
+   
+
     return element;
 };

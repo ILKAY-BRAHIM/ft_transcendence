@@ -60,6 +60,7 @@
 
 .img-md{
     min-width: 95px;
+    max-width: 110px;
 }
 
 .profile-image img{

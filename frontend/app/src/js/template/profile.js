@@ -4,28 +4,12 @@ import { creatButton } from '../component/button.js';
 import { createIcon, icons } from '../component/icons.js';
 import { creatTitle } from '../component/generale.js';
 import { attachSVGLoadEventListeners } from '../component/Nav.js';
+// import { navigatTo } from '../services/route.js';
+import { goTo } from '../services/route.js';
 
 const base = '/src/assets/images/';
 
 // ---------------------------------------- Left side Instence --------------------------------------------
-const badgesCollected = () => {
-    const element = document.createElement('div');
-    element.setAttribute('class', 'box');
-
-    const title = document.createElement('p');
-    title.setAttribute('class', 'title');
-    title.innerHTML = 'badges collected';
-
-    const badge = document.createElement('div');
-    badge.setAttribute('class', 'badges');
-    badge.appendChild(createIcon(icons.Champion, 'icon-sm'));
-    badge.appendChild(createIcon(icons.Leaderboard, 'icon-sm'));
-
-    element.appendChild(title);
-    element.appendChild(badge);
-
-    return element;
-};
 
 // the single component of personal information (icon, title, data)
 const personalInfo = (iconName , titel, data) => {
@@ -126,26 +110,66 @@ const championsAchievement = () => {
     champion.appendChild(championsAchievementCard());
     champion.appendChild(championsAchievementCard());
     champion.appendChild(championsAchievementCard());
+    champion.appendChild(championsAchievementCard());
+    // champion.appendChild(championsAchievementCard());
     return champion;
 }
 
 // ---------------------------------------- Right side Instence --------------------------------------------
 
-const creatAchievement = () => {
+const creatPolygon = (position, imageLink) => {
+    const polygon = document.createElement('div');
+    polygon.setAttribute('class', `polygone polygone-${position}`);
+
+    const userName = document.createElement('p');
+    userName.setAttribute('class', `player-name ${position}`);
+    userName.innerHTML = 'you';
+
+    const userImg = document.createElement('img');
+    userImg.setAttribute('src', imageLink);
+    userImg.setAttribute('alt', 'user image');
+
+    polygon.appendChild(userName);
+    polygon.appendChild(userImg);
+
+    return polygon;
+}
+
+export const creatMatchHistory = (type) => {
     const element = document.createElement('div');
-    element.setAttribute('class', 'achiev-box');
+    element.setAttribute('class', 'union');
+    
+    const result = document.createElement('p');
+    result.setAttribute('class', `result ${type}`);
+    result.innerHTML = 'victory';
+
+    element.appendChild(creatPolygon('match-left', `${base}default.png`));
+    element.appendChild(creatPolygon('match-right', `${base}cat.avif`));
+    element.appendChild(result);
 
     return element;
 }
 
-const achievement = () => {
+const matchHistory = () => {
     const element = document.createElement('div');
-    element.setAttribute('class', 'box achievement');
+    element.setAttribute('class', 'box match-history');
 
-    element.appendChild(creatAchievement());
-    element.appendChild(creatAchievement());
-    element.appendChild(creatAchievement());
+    const title = document.createElement('p');
+    title.setAttribute('class', 'title');
+    title.innerHTML = 'match history';
 
+    
+    const collection = document.createElement('div');
+    collection.setAttribute('class', 'match-history-collection');
+    collection.appendChild(creatMatchHistory('defeat'));
+    collection.appendChild(creatMatchHistory('vectory'));
+    collection.appendChild(creatMatchHistory('defeat'));
+    collection.appendChild(creatMatchHistory('defeat'));
+    collection.appendChild(creatMatchHistory('vectory'));
+    collection.appendChild(creatMatchHistory('vectory'));
+    
+    element.appendChild(title);
+    element.appendChild(collection);
     return element;
 }
 
@@ -228,7 +252,6 @@ const profileSectionFriend = () => {
     listOfFriend.appendChild(friendInstence());
     listOfFriend.appendChild(friendInstence());
     listOfFriend.appendChild(friendInstence());
-    listOfFriend.appendChild(friendInstence());
     
     element.appendChild(title);
     element.appendChild(listOfFriend);
@@ -237,7 +260,6 @@ const profileSectionFriend = () => {
 }
 
 export default function Profile() {
-    // const element = document.getElementById('test');
     const element = document.createElement('div');
     element.setAttribute('class', 'profile-body');
 
@@ -247,11 +269,15 @@ export default function Profile() {
     const img = creatProfileImage('', 'img-md');
     const info = creatProfileInfo();
     const button = creatButton('true', 'btn-sm', 'btn-gold', 'Edit profile');
+
+    button.addEventListener('click', () => {
+        goTo('/edit');
+    });
+
     leftBox.appendChild(creatProfileInstance(img, info, button, 'right-bottom', 'profile-card-md'));
 
     const leftMiddel = document.createElement('div');
     leftMiddel.setAttribute('class', 'middel');
-    leftMiddel.appendChild(badgesCollected());
     leftMiddel.appendChild(personalInformations());
     leftMiddel.appendChild(championsAchievement());
 
@@ -265,7 +291,7 @@ export default function Profile() {
     rightMiddel.setAttribute('class', 'middel');
 
     
-    rightBox.appendChild(achievement());
+    rightBox.appendChild(matchHistory());
     rightMiddel.appendChild(profileSectionRank());
     rightMiddel.appendChild(profileSectionFriend());
 

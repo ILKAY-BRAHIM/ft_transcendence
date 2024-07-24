@@ -9,6 +9,7 @@
 @import url(./component/profile.css);
 @import url(./component/search-bar.css);
 @import url(./component/button.css);
+@import url(./component/match-box.css);
 
 /* layout */
 @import url(./layout/general.css);
@@ -16,3 +17,4 @@
 
 /* Pages */
 @import url(./pages/profile.css);
+@import url(./pages/edit.css);

@@ -4,3 +4,8 @@ export const creatTitle = (content) => {
     title.innerHTML = content;
     return title;
 }
+
+export const justABrTag = () => {
+    const br = document.createElement('br');
+    return br;
+}

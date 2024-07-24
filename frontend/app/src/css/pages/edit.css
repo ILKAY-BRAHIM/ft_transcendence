@@ -1,0 +1,63 @@
+.edit-profile{
+    display: grid;
+    height: 100%;
+    width: 80%;
+    grid-template-rows: 1fr 12fr 1fr;
+    gap : 1em;
+    padding: 5em;
+    color: var(--font-primary-color);
+}
+
+.edit-profile-middel{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1em;
+    width: 70%;
+    justify-self: center;
+}
+
+.edit-profile-middel label{
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-reguler);
+}
+
+.edit-profile-middel .profile-image{
+    align-self: self-start;
+}
+
+.edit-profile .btn{
+    margin-left: auto;
+}
+
+.edit-display-info, .edit-password{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+}
+
+.edit-profile-middel .lastOne{
+    margin-bottom: 3em;
+}
+
+.edit-profile-middel input{
+    padding: 0.8em;
+    border: none;
+    margin-top: 0.5em;
+    background-color: var(--color-secondary-10);
+    color: var(--font-primary-color);
+    border-radius: 0.5em;
+    height: 3em;
+    width: 15em;
+}
+
+.edit-profile-middel input::placeholder{
+    color: var(--font-secondary-color);
+    font-weight: var(--font-weight-light);
+}
+
+.edit-profile-middel input:focus{
+    outline: none;
+}
+

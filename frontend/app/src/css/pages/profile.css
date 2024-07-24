@@ -15,7 +15,7 @@
     width: 100%;
     display: grid;
     grid-row: 1/2;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 1fr 5fr;
     padding: 1rem;
     align-items: start;
     max-width: 500px;
@@ -27,7 +27,7 @@
     height: 100%;
     width: 100%;
     gap:2em;
-    grid-template-rows: 2fr auto 3fr;
+    grid-template-rows: 1fr 1fr;
     display: grid;
     max-width: 1100px;
 }
@@ -128,22 +128,21 @@
 }
 
 /* Achievement */
-.right .achievement {
+.right .match-history{
+    display: flex;
+    flex-direction: column;
+    /* gap: 3em; */
+
+}
+.right .match-history-collection {
     height: 100%;
     width: 100%;
-    
     display: flex;
-    flex-direction: row;
-    gap: 3em;
+    flex-wrap: wrap;
+    
+    gap: 1em;
 }
 
-.right .achiev-box{
-    max-width: 300px;
-    max-height: 300px;
-    aspect-ratio: 1 / 1;
-    background-color: var(--color-complementary);
-    border-radius: 1em;
-}
 
 
 /* Rank list ------------------------  */
@@ -157,6 +156,7 @@
 
 .right .rank, .right .friend{
     width: 100%;
+    height: max-content;
     font-size: var(--font-size-xs);
 }
 
@@ -176,6 +176,7 @@
     flex-direction: column;
     list-style-type: none;
     justify-content: center;
+    
 }
 
 .right .rank .list-of-rank{
@@ -203,3 +204,4 @@
     justify-items: center;
     gap: 1em;
 }
+

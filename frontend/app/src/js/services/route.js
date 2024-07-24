@@ -6,6 +6,9 @@ import Leaderboard from '../template/leaderboard.js';
 import Game from '../template/game.js';
 import Champion from '../template/champion.js';
 import Welcome from '../template/welcome.js';
+import EditProfile from '../template/edit.js';
+
+
 import Nav from '../component/Nav.js';
 import { renderComponent } from '../app.js';
 import { creatHeader } from '../component/header.js';
@@ -56,6 +59,11 @@ const urlRoutes = {
         component: Champion,
         title: "champion",
         description: "Play a game."
+    },
+    "/edit": {
+        component: EditProfile,
+        title: "Edit Profile",
+        description: "Edit your profile."
     }
     
 };
@@ -68,6 +76,11 @@ export const navigatTo = (event) => {
     urlLocationHandler();
 };
 
+export const goTo = (path) => {
+    window.history.pushState({}, "", path);
+    urlLocationHandler();
+}
+
 export const urlLocationHandler = async () => {
     let location = window.location.pathname;
     if (location.length === 0) {
@@ -78,12 +91,11 @@ export const urlLocationHandler = async () => {
     try {
         const header = document.getElementById('header');
         header.innerHTML = '';
+        document.getElementById("nav-container").innerHTML = '';
         if (location != "/") {
             renderComponent(Nav());
             header.append(creatHeader());   
         }
-        console.log(location);
-
         const Component = route.component;
         const componentInstance = Component();
         document.getElementById("page-body").innerHTML = '';
@@ -96,3 +108,5 @@ export const urlLocationHandler = async () => {
         document.title = "Error";
     }
 };
+
+window.addEventListener('popstate', urlLocationHandler);

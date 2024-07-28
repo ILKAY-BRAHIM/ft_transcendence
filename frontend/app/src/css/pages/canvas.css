@@ -1,0 +1,12 @@
+.play-offline p{
+    font-size: var(--font-weight-semi-bold);
+    margin-bottom: 1em;
+    color: var(--color-white);
+    color : var(--font-primary-color);
+
+}
+canvas {
+    background-color: var(--color-complementary); 
+    border: 5px solid var(--color-bleu); 
+    border-radius: 24px;
+}

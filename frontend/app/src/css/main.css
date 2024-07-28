@@ -18,3 +18,5 @@
 /* Pages */
 @import url(./pages/profile.css);
 @import url(./pages/edit.css);
+@import url(./pages/game.css);
+@import url(./pages/canvas.css);

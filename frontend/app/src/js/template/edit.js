@@ -61,7 +61,7 @@ const editPasswordForm = () => {
 
     const element = document.createElement('form');
     element.setAttribute('class', 'edit-password');
-    element.setAttribute('method', 'GET');
+    element.setAttribute('method', 'POST');
     element.setAttribute('action', '/profile');
 
     const titel = document.createElement('p');
